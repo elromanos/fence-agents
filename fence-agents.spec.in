@@ -55,6 +55,7 @@ fence-agents-emerson \\
 fence-agents-eps \\
 fence-agents-gce \\
 fence-agents-hds-cb \\
+fence-agents-hetzner \\
 fence-agents-heuristics-ping \\
 fence-agents-hpblade \\
 fence-agents-ibmblade \\
@@ -628,6 +629,18 @@ Fence agent for Hitachi Compute Blades that are accessed via telnet.
 %files hds-cb
 %{_sbindir}/fence_hds_cb
 %{_mandir}/man8/fence_hds_cb.8*
+
+%package: hetzner
+License: GPL-2.0-or-later AND LGPL-2.0-or-later
+Summary: Fence agent for Hetzner Cloud
+Requires: python3-requests
+Requires: fence-agents-common = %{version}-%{release}
+BuildArch: noarch
+%description hetzner
+Fence agent for Hetzner Cloud instances.
+%files hetzner
+%{_sbindir}/fence_hetzner
+%{_mandir}/man8/fence_hetzner.8*
 
 %package heuristics-ping
 License: GPL-2.0-or-later AND LGPL-2.0-or-later
